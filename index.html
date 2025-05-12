@@ -1,149 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Carbon Cycle</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Futuristic Carbon Cycle</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      overflow: hidden;
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(120deg, #000000, #1a1a1a);
-      color: #00ffcc;
-      overflow-x: hidden;
+      background: black;
+      color: white;
     }
 
-    body::before {
-      content: '';
+    canvas#bg {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(circle at 50% 50%, rgba(0,255,100,0.15) 0%, transparent 70%), url('https://www.transparenttextures.com/patterns/stardust.png');
       z-index: -1;
-      animation: flicker 6s infinite;
     }
 
-    @keyframes flicker {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.5; }
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-      font-size: 3rem;
-      color: #00ffea;
-      text-shadow: 0 0 20px #00fff7, 0 0 60px #00ffea;
-      animation: glowIn 2s ease-out;
-    }
-
-    sub {
-      display: block;
-      font-size: 1.2rem;
-      color: #7ef9ff;
-      margin-top: 10px;
-    }
-
-    @keyframes glowIn {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
-    .section {
-      background: rgba(0, 255, 204, 0.05);
-      border: 2px solid #00ffee33;
-      border-radius: 20px;
-      margin: 30px auto;
-      padding: 25px;
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
       max-width: 900px;
-      box-shadow: 0 0 20px #00ffee55, inset 0 0 10px #00ffee22;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeSlide 1s ease forwards;
+      margin: auto;
+      text-align: center;
     }
 
-    .section:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 40px #00ffeeaa;
+    h1.glow-text {
+      font-size: 3em;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7, 0 0 20px #00e5ff, 0 0 30px #00d1ff;
+      animation: pulse 2s infinite;
     }
 
-    h2 {
-      color: #adff2f;
-      text-shadow: 0 0 10px #00ffcc;
+    .neon-box {
+      border: 2px solid #0ff;
+      box-shadow: 0 0 20px #0ff, inset 0 0 10px #0ff;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 700px;
+      transition: transform 0.3s;
     }
 
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    p, li {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    .neon-box:hover {
+      transform: scale(1.05);
     }
 
     footer {
+      margin-top: 40px;
+      padding: 20px;
       text-align: center;
-      padding: 30px 10px;
-      font-size: 1.1rem;
-      background-color: #111;
-      color: #00ffee;
-      border-top: 2px solid #00ffee33;
-      margin-top: 50px;
+      font-size: 0.9em;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7, 0 0 20px #00e5ff;
+      border-top: 1px solid #00ffe7;
     }
 
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 10px #00ffe7, 0 0 20px #00e5ff, 0 0 30px #00d1ff;
+      }
+      50% {
+        text-shadow: 0 0 20px #00e5ff, 0 0 40px #00d1ff, 0 0 60px #00aaff;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    ⚡ The Carbon Cycle ⚡
-    <sub>Supercharged Journey of Carbon on Earth</sub>
-  </header>
+  <canvas id="bg"></canvas>
 
-  <div class="section">
-    <h2>🌍 What is the Carbon Cycle?</h2>
-    <p>The carbon cycle is a mind-blowing system where carbon atoms travel from the atmosphere into organisms and back again. It’s nature’s way of recycling!</p>
+  <div class="content">
+    <h1 class="glow-text">Carbon Cycle</h1>
+
+    <div class="neon-box">
+      <h2>Introduction</h2>
+      <p>The carbon cycle is Earth's natural way of recycling carbon atoms through the atmosphere, biosphere, oceans, and geosphere.</p>
+    </div>
+
+    <div class="neon-box">
+      <h2>Photosynthesis</h2>
+      <p>Plants absorb carbon dioxide (CO2) and convert it into oxygen and glucose through photosynthesis. Animals and humans then consume these plants and release CO2 back through respiration.</p>
+    </div>
+
+    <div class="neon-box">
+      <h2>Fossil Fuels & Human Impact</h2>
+      <p>Burning fossil fuels like coal, oil, and gas releases stored carbon into the atmosphere, increasing CO2 levels and accelerating climate change.</p>
+    </div>
+
+    <div class="neon-box">
+      <h2>Ocean Absorption</h2>
+      <p>Oceans absorb a large portion of CO2 from the atmosphere, helping regulate Earth's temperature — but excessive absorption causes ocean acidification.</p>
+    </div>
+
+    <div class="neon-box">
+      <h2>Decomposition</h2>
+      <p>When organisms die, decomposers break them down and release carbon back into the soil and atmosphere, completing the cycle.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      Made by Gaurav | Project: Carbon Cycle | © 2025
+    </footer>
   </div>
 
-  <div class="section">
-    <h2>🔄 Main Steps in the Carbon Cycle</h2>
-    <ul>
-      <li>🌱 <strong>Photosynthesis:</strong> Plants absorb CO₂ to grow and release oxygen.</li>
-      <li>💨 <strong>Respiration:</strong> Living things breathe out CO₂.</li>
-      <li>🦴 <strong>Decomposition:</strong> Dead matter returns carbon to soil and air.</li>
-      <li>🔥 <strong>Combustion:</strong> Burning fuels rapidly releases carbon.</li>
-      <li>🌊 <strong>Ocean Uptake:</strong> Oceans soak up carbon from the atmosphere.</li>
-    </ul>
-  </div>
+  <!-- THREE.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg'), antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    camera.position.z = 1;
 
-  <div class="section">
-    <h2>🌡️ Why It Matters</h2>
-    <p>The carbon cycle helps regulate Earth’s temperature. Disturbing it causes dangerous climate shifts — floods, droughts, and rising seas!</p>
-  </div>
+    const starGeometry = new THREE.BufferGeometry();
+    const starCount = 1000;
+    const positions = [];
+    for (let i = 0; i < starCount; i++) {
+      positions.push((Math.random() - 0.5) * 1000);
+      positions.push((Math.random() - 0.5) * 1000);
+      positions.push((Math.random() - 0.5) * 1000);
+    }
+    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    const starMaterial = new THREE.PointsMaterial({ color: 0x00ffff, size: 1 });
+    const stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
 
-  <div class="section">
-    <h2>🧍 Human Impact</h2>
-    <p>Our factories, cars, and deforestation are turbo-charging carbon levels. Time to switch gears toward a cleaner future!</p>
-  </div>
+    function animate() {
+      requestAnimationFrame(animate);
+      stars.rotation.x += 0.0005;
+      stars.rotation.y += 0.0005;
+      renderer.render(scene, camera);
+    }
 
-  <div class="section">
-    <h2>🛠️ Solutions We Can Power</h2>
-    <ul>
-      <li>🌳 Plant millions of trees</li>
-      <li>☀️ Shift to solar & wind energy</li>
-      <li>♻️ Recycle, reuse, rethink</li>
-      <li>🚴 Ride bikes, walk more</li>
-    </ul>
-  </div>
+    animate();
 
-  <footer>
-    Made by Gaurav 🚀 | Future is Green ✨
-  </footer>
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
 </body>
 </html>
