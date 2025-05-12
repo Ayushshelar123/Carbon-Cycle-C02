@@ -1,95 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Carbon Cycle</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f9f9;
       margin: 0;
-      padding: 0;
-      animation: fadeIn 1.5s ease-in;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(120deg, #000000, #1a1a1a);
+      color: #00ffcc;
+      overflow-x: hidden;
     }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 50%, rgba(0,255,100,0.15) 0%, transparent 70%), url('https://www.transparenttextures.com/patterns/stardust.png');
+      z-index: -1;
+      animation: flicker 6s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 0.5; }
+    }
+
     header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
       text-align: center;
+      padding: 60px 20px 30px;
+      font-size: 3rem;
+      color: #00ffea;
+      text-shadow: 0 0 20px #00fff7, 0 0 60px #00ffea;
+      animation: glowIn 2s ease-out;
     }
-    h1, h2 {
-      margin: 10px;
-    }
-    .content {
-      padding: 20px;
-    }
-    .section {
-      background: #e6f2ff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .section:hover {
-      transform: scale(1.02);
-    }
-    img {
-      width: 100%;
-      max-width: 400px;
+
+    sub {
       display: block;
-      margin: 10px auto;
-      border-radius: 8px;
+      font-size: 1.2rem;
+      color: #7ef9ff;
+      margin-top: 10px;
     }
+
+    @keyframes glowIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .section {
+      background: rgba(0, 255, 204, 0.05);
+      border: 2px solid #00ffee33;
+      border-radius: 20px;
+      margin: 30px auto;
+      padding: 25px;
+      max-width: 900px;
+      box-shadow: 0 0 20px #00ffee55, inset 0 0 10px #00ffee22;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeSlide 1s ease forwards;
+    }
+
+    .section:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px #00ffeeaa;
+    }
+
+    h2 {
+      color: #adff2f;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
     footer {
       text-align: center;
-      padding: 10px;
-      background: #2c3e50;
-      color: white;
+      padding: 30px 10px;
+      font-size: 1.1rem;
+      background-color: #111;
+      color: #00ffee;
+      border-top: 2px solid #00ffee33;
+      margin-top: 50px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>The Carbon Cycle</h1>
-    <p>Understanding how carbon moves through our Earth</p>
+    ⚡ The Carbon Cycle ⚡
+    <sub>Supercharged Journey of Carbon on Earth</sub>
   </header>
 
-  <div class="content">
-    <div class="section">
-      <h2>1. What is the Carbon Cycle?</h2>
-      <p>The carbon cycle describes how carbon moves between the air, land, oceans, and living things.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Carbon_cycle_diagram-en.svg/600px-Carbon_cycle_diagram-en.svg.png" alt="Carbon Cycle Diagram">
-    </div>
+  <div class="section">
+    <h2>🌍 What is the Carbon Cycle?</h2>
+    <p>The carbon cycle is a mind-blowing system where carbon atoms travel from the atmosphere into organisms and back again. It’s nature’s way of recycling!</p>
+  </div>
 
-    <div class="section">
-      <h2>2. Main Steps in the Cycle</h2>
-      <ul>
-        <li><strong>Photosynthesis:</strong> Plants use CO₂ to make food.</li>
-        <li><strong>Respiration:</strong> Animals and plants release CO₂.</li>
-        <li><strong>Decomposition:</strong> Dead things release carbon as they decay.</li>
-        <li><strong>Combustion:</strong> Burning things adds CO₂ to the air.</li>
-        <li><strong>Ocean Absorption:</strong> Oceans store a lot of carbon.</li>
-      </ul>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Carbon_cycle.jpg" alt="Carbon Cycle Visual">
-    </div>
+  <div class="section">
+    <h2>🔄 Main Steps in the Carbon Cycle</h2>
+    <ul>
+      <li>🌱 <strong>Photosynthesis:</strong> Plants absorb CO₂ to grow and release oxygen.</li>
+      <li>💨 <strong>Respiration:</strong> Living things breathe out CO₂.</li>
+      <li>🦴 <strong>Decomposition:</strong> Dead matter returns carbon to soil and air.</li>
+      <li>🔥 <strong>Combustion:</strong> Burning fuels rapidly releases carbon.</li>
+      <li>🌊 <strong>Ocean Uptake:</strong> Oceans soak up carbon from the atmosphere.</li>
+    </ul>
+  </div>
 
-    <div class="section">
-      <h2>3. Why is It Important?</h2>
-      <p>Too much carbon in the air causes climate change. It’s important to keep balance.</p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Greenhouse_Effect.svg" alt="Greenhouse Effect">
-    </div>
+  <div class="section">
+    <h2>🌡️ Why It Matters</h2>
+    <p>The carbon cycle helps regulate Earth’s temperature. Disturbing it causes dangerous climate shifts — floods, droughts, and rising seas!</p>
+  </div>
+
+  <div class="section">
+    <h2>🧍 Human Impact</h2>
+    <p>Our factories, cars, and deforestation are turbo-charging carbon levels. Time to switch gears toward a cleaner future!</p>
+  </div>
+
+  <div class="section">
+    <h2>🛠️ Solutions We Can Power</h2>
+    <ul>
+      <li>🌳 Plant millions of trees</li>
+      <li>☀️ Shift to solar & wind energy</li>
+      <li>♻️ Recycle, reuse, rethink</li>
+      <li>🚴 Ride bikes, walk more</li>
+    </ul>
   </div>
 
   <footer>
-    <p>Project by [Your Name] – Grade 5</p>
+    Made by Gaurav 🚀 | Future is Green ✨
   </footer>
-
 </body>
 </html>
